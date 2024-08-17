@@ -7,9 +7,9 @@ const port = 3000;
 // MySQL接続設定
 const connection = mysql.createConnection({
   host: "localhost",
-  user: "yourusername",
-  password: "yourpassword",
-  database: "mydatabase",
+  user: "kusamori", // ユーザー名を指定します
+  password: "kusaw0k0sh!tem0r!", // パスワードを指定します
+  database: "workbench_practice", // 使用するデータベース名
 });
 
 // データベース接続
