@@ -26,16 +26,14 @@ app.use(express.static("public"));
 
 // データを取得するエンドポイント
 app.get("/message", (req, res) => {
-  connection.query(
-    "SELECT message_text FROM messages LIMIT 1",
-    (err, results) => {
-      if (err) {
-        res.status(500).send("Error retrieving data");
-        return;
-      }
-      res.json(results[0]);
+  connection.query("SELECT message_text FROM messages", (err, results) => {
+    if (err) {
+      res.status(500).send("Error retrieving data");
+      return;
     }
-  );
+    console.log(results); // 追加: 結果をコンソールに出力
+    res.json(results);
+  });
 });
 
 app.listen(port, () => {
